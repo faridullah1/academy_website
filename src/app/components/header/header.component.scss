@@ -1,0 +1,44 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.4rem 4rem;
+
+	.company {
+		display: flex;
+		align-items: center;
+
+		.logo {
+			margin-right: .8rem;
+			height: 3rem;
+		}
+	}
+
+	.academy-name {
+		font-weight: 700;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		width: 24rem;
+	}
+
+	.nav-item {
+		text-decoration: none;
+		margin-right: 3.4rem;
+		color: #808396;
+	}
+
+	.active {
+		color: var(--color-black);
+	}
+
+	.btn {
+		padding: 1.4rem 3rem;
+		color: #FCFCFF;
+		font-weight: 700;
+		font-size: 1.6rem;
+		border: none;
+		box-shadow: 0px 0px 8px -3px #96BB7C;
+		border-radius: 8px;
+		cursor: pointer;
+	}
+}

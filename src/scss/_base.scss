@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #96BB7C;
+	--color-black: #030F4B;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 1.7;
+	color: var(--color-black);
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+}
