@@ -1,0 +1,17 @@
+.main-container {
+	background-color: #F0F6FA;
+	
+	.carousel {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.carousel-img {
+			mix-blend-mode: multiply;
+		}
+
+		.welcome-note {
+			padding: 0 6rem;
+		}
+	}
+}
