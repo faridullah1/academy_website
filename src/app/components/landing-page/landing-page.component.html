@@ -15,6 +15,22 @@
 
 		<img src="/assets/images/carousel-1.jpeg" alt="Placeholder" class="carousel-img">
 	</section>
+
+	<section class="announcements-section">
+		<div class="main-annoucement mb-4">
+			Congratulations on the brilliant result of DIT New syllabus 98% Of NAC Institute of Computer Center. We are going to launch
+		</div>
+
+		<div class="all-announcements">
+			<div class="announcement" *ngFor="let annoucement of annoucements">
+				<img [src]="annoucement.image" alt="annoucement">
+				<div class="title">{{ annoucement.title }}</div>
+				<div class="description">{{ annoucement.description }}</div>
+			</div>
+		</div>
+
+		<button class="btn-primary">More Info</button>
+	</section>
 </main>
 
 <footer></footer>
