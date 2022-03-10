@@ -1,5 +1,6 @@
 .main-container {
 	background-color: #F0F6FA;
+	margin-top: 75px;
 	
 	.carousel {
 		display: flex;
@@ -7,7 +8,7 @@
 		align-items: center;
 
 		.carousel-img {
-			mix-blend-mode: multiply;
+			mix-blend-mode: darken;
 		}
 
 		.welcome-note {
