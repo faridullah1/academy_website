@@ -66,8 +66,9 @@
 		}
 	}
 
-	.principle-message {
+	.principle-message, .introduction {
 		padding: 0 6rem;
+		margin-bottom: 5rem;
 
 		.card {
 			display: flex;
