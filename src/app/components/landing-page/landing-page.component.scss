@@ -1,8 +1,10 @@
 .main-container {
-	background-color: #F0F6FA;
+	background-color: #eef2f5;
 	margin-top: 75px;
 	
 	.carousel {
+		background-color: #F0F6FA;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -23,7 +25,6 @@
 	}
 
 	.announcements-section {
-		background-color: #eef2f5;
 		padding: 4.5rem 0;
 
 		display: flex;
@@ -61,6 +62,43 @@
 
 			.description {
 				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.principle-message {
+		padding: 0 6rem;
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			width: 100%;
+			background: rgba(242, 250, 255, 0.5);
+
+			.title {
+				font-size: 3.5rem;
+				font-weight: 700;
+				letter-spacing: .16rem;
+				margin-top: 2.8rem;
+			}
+
+			.message-section {
+				display: flex;
+				padding: 6rem 4.5rem 7rem;
+	
+				.message {
+					font-size: 1.6rem;
+					flex: 0 0 50%;
+				}
+	
+				.img {
+					max-width: 100%;
+					max-height: 100%;
+					margin: auto;
+					display: block;
+				}
 			}
 		}
 	}
