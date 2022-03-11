@@ -3,3 +3,9 @@ export interface Annoucements {
 	title: string;
 	description: string;
 }
+
+export interface Course {
+	image: string;
+	name: string;
+	teacher: string;
+}
