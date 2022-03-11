@@ -8,6 +8,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { CoursesComponent } from './components/courses/courses.component';
   imports: [
     BrowserModule,
 	HttpClientModule,
+	GoogleMapsModule,
     AppRoutingModule
   ],
   providers: [],
