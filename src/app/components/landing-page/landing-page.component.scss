@@ -103,4 +103,25 @@
 			}
 		}
 	}
+
+	.map-address {
+		display: flex;
+		padding: 0 6rem;
+		margin-top: 6rem;
+		
+		.info {
+			width: 50%;
+
+			.logo {
+				width: 7rem;
+				height: 7rem;
+				mix-blend-mode: multiply;
+			}
+		
+			.contact-info {
+				margin-top: 2rem;
+				color: 	#616162;
+			}
+		}
+	}
 }
