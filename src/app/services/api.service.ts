@@ -6,7 +6,7 @@ import { GenericApiResponse } from '../models/response';
 
 @Injectable({providedIn: 'root'})
 export class ApiService {
-	private baseUrl: string = '/api/v1/';
+	private baseUrl: string = 'https://admin-nac-academy.herokuapp.com/api/v1/';
 	constructor(private http: HttpClient) { }
 	
 	getData(slug: string): Observable<GenericApiResponse> {
