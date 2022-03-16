@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Annoucements, Course } from 'src/app/models/general';
+import { Annoucements, Course, SystemSetting } from 'src/app/models/general';
 import { GenericApiResponse } from 'src/app/models/response';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -11,6 +11,7 @@ declare var mapboxgl: any;
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+	settings: SystemSetting;
 	annoucements: Annoucements[];
 	courses: Course[] = [];
 
@@ -25,6 +26,7 @@ export class LandingPageComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.getSystemSettings();
 		this.getAllCourses();
 		this.drawMap();
 	}
@@ -32,6 +34,12 @@ export class LandingPageComponent implements OnInit {
 	getAllCourses(): void {
 		this.apiService.getData('courses').subscribe((resp: GenericApiResponse) => {
 			this.courses = resp.data.courses;
+		});
+	}
+
+	getSystemSettings(): void {
+		this.apiService.getData('system_settings').subscribe((resp: GenericApiResponse) => {
+			this.settings = resp.data.systemSettings;
 		});
 	}
 

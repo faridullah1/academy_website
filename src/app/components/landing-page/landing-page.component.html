@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [academyName]="settings?.academyName || ''"></app-header>
 
 <main class="main-container">
 	<section class="carousel">
@@ -38,13 +38,7 @@
 
 			<div class="message-section">
 				<div class="message">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
-					
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
+					{{ settings?.principleMessage }}
 				</div>
 
 				<div style="flex: 1;">
@@ -60,13 +54,7 @@
 
 			<div class="message-section">
 				<div class="message">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
-					
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, accusamus. Tenetur, temporibus praesentium 
-					est vel velit facere laborum! Et voluptas magnam repudiandae, veritatis non commodi suscipit voluptatibus numquam ipsum sunt.
+					{{ settings?.introduction }}
 				</div>
 
 				<div style="flex: 1;">
@@ -81,12 +69,11 @@
 	<section class="map-address">
 		<div class="info">
 			<img src="/assets/images/logo.jpg" alt="Logo" class="logo">
-			<div class="academy-name mt-5">NAC Institute of Engineering and technology</div>
+			<div class="academy-name mt-5">{{ settings?.address }}</div>
 
 			<div class="contact-info">
-				<div>Phone: 0511425415</div>
-				<div>Mobile: 03482514414</div>
-				<div>Email: fakhar@gmail.com</div>
+				<div *ngIf="settings?.mobileNo">Mobile: {{ settings.mobileNo }}</div>
+				<div *ngIf="settings?.email">Email: {{ settings.email }}</div>
 			</div>
 		</div>
 
@@ -96,4 +83,4 @@
 	</section>
 </main>
 
-<app-footer></app-footer>
+<app-footer [academyName]="settings?.academyName || ''"></app-footer>
