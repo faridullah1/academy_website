@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
 
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-	@Input() academyName: string;
+	academyName: string;
 
-	constructor() {}
+	constructor(private configService: ConfigService) {}
+
+	ngOnInit(): void {
+		this.configService.settings.subscribe(data => {
+			this.academyName = data.academyName;
+		});
+	}
 }

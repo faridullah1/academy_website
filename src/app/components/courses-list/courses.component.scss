@@ -1,0 +1,16 @@
+.courses-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 3rem;
+
+	.courses {
+		display: flex;
+	}
+
+	.no-course {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-top: -3rem;
+	}
+}

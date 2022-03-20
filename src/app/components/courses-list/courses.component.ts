@@ -3,11 +3,11 @@ import { Course } from 'src/app/models/general';
 
 
 @Component({
-  selector: 'app-courses',
+  selector: 'courses-list',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent {
+export class CoursesListComponent {
 	@Input() courses: Course[] = [];
 	
 	constructor() { }

@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CoursesComponent } from './components/courses/courses.component';
+import { CoursesDetailComponent } from './components/courses-detail/courses-detail.component';
+import { CoursesListComponent } from './components/courses-list/courses.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { CoursesComponent } from './components/courses/courses.component';
     LandingPageComponent,
     HeaderComponent,
     FooterComponent,
-    CoursesComponent
+    CoursesListComponent,
+    CoursesDetailComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

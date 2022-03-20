@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Annoucements, Course, SystemSetting } from 'src/app/models/general';
 import { GenericApiResponse } from 'src/app/models/response';
 import { ApiService } from 'src/app/services/api.service';
+import { ConfigService } from 'src/app/services/config.service';
 
 declare var mapboxgl: any;
 
@@ -15,18 +16,21 @@ export class LandingPageComponent implements OnInit {
 	annoucements: Annoucements[];
 	courses: Course[] = [];
 
-	constructor(private apiService: ApiService) 
+	constructor(private apiService: ApiService, private configService: ConfigService) 
 	{
 		this.annoucements = [
 			{ title: 'DIT Result Announced', image: '/assets/images/announcement-1.jpg', description: 'Once again excellent result this time.' },
 			{ title: 'DIT Result Announced', image: '/assets/images/announcement-2.jpg', description: 'Once again excellent result this time.' },
 			{ title: 'DIT Result Announced', image: '/assets/images/announcement-3.jpg', description: 'Once again excellent result this time.' },
 			{ title: 'DIT Result Announced', image: '/assets/images/announcement-4.jpg', description: 'Once again excellent result this time.' },
-		]
+		];
 	}
 
 	ngOnInit(): void {
-		this.getSystemSettings();
+		this.configService.settings.subscribe(data => {
+			this.settings = data;
+		});
+
 		this.getAllCourses();
 		this.drawMap();
 	}
@@ -34,12 +38,6 @@ export class LandingPageComponent implements OnInit {
 	getAllCourses(): void {
 		this.apiService.getData('courses').subscribe((resp: GenericApiResponse) => {
 			this.courses = resp.data.courses;
-		});
-	}
-
-	getSystemSettings(): void {
-		this.apiService.getData('system_settings').subscribe((resp: GenericApiResponse) => {
-			this.settings = resp.data.systemSettings;
 		});
 	}
 

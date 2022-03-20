@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
 
 
 @Component({
@@ -7,11 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-	@Input() academyName: string;
+	academyName: string;
 
-	constructor() { }
+	constructor(private configService: ConfigService) {}
 
 	ngOnInit(): void {
+		this.configService.settings.subscribe(data => {
+			this.academyName = data.academyName;
+		});
 	}
-
 }

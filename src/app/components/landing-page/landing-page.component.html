@@ -1,26 +1,11 @@
-<app-header [academyName]="settings?.academyName || ''"></app-header>
-
-<main class="main-container">
-	<section class="carousel">
-		<div class="welcome-note">
-			<div class="text-primary mb-4">Welcome</div>
-			<h1 class="heading heading-primary">Best Learning Oppertunities</h1>
-			<h3 class="mb-4" style="color: #737373;">Our goal is to make online education work for every one</h3>
-			
-			<div class="actions">
-				<button class="btn-primary mr-3">Join Us</button>
-				<button class="btn-primary-outline">Learn More</button>
-			</div>
-		</div>
-
-		<img src="/assets/images/carousel-1.jpeg" alt="Placeholder" class="carousel-img">
-	</section>
-
+<div class="landing-page">
+	<app-carousel></app-carousel>
+	
 	<section class="announcements-section">
 		<div class="main-annoucement mb-4">
 			Congratulations on the brilliant result of DIT New syllabus 98% Of NAC Institute of Computer Center. We are going to launch
 		</div>
-
+	
 		<div class="all-announcements">
 			<div class="announcement" *ngFor="let annoucement of annoucements">
 				<img [src]="annoucement.image" alt="annoucement">
@@ -28,59 +13,57 @@
 				<div class="description">{{ annoucement.description }}</div>
 			</div>
 		</div>
-
+	
 		<button class="btn-primary">More Info</button>
 	</section>
-
+	
 	<section class="principle-message">
 		<div class="card">
-			<div class="title">Principle Message</div>
-
+			<div class="section-heading" style="margin-top: 2.8rem;">Principle Message</div>
+	
 			<div class="message-section">
 				<div class="message">
 					{{ settings?.principleMessage }}
 				</div>
-
+	
 				<div style="flex: 1;">
 					<img src="/assets/images/principle.jpg" alt="Principle" class="img">
 				</div>
 			</div>
 		</div>
 	</section>
-
+	
 	<section class="introduction">
 		<div class="card">
-			<div class="title">Introduction</div>
-
+			<div class="section-heading" style="margin-top: 2.8rem;">Introduction</div>
+	
 			<div class="message-section">
 				<div class="message">
 					{{ settings?.introduction }}
 				</div>
-
+	
 				<div style="flex: 1;">
 					<img src="/assets/images/intro.jpg" alt="Intro" class="img">
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<app-courses [courses]="courses" ></app-courses>
-
+	
+	<courses-list [courses]="courses" ></courses-list>
+	
 	<section class="map-address">
 		<div class="info">
 			<img src="/assets/images/logo.jpg" alt="Logo" class="logo">
 			<div class="academy-name mt-5">{{ settings?.address }}</div>
-
+	
 			<div class="contact-info">
 				<div *ngIf="settings?.mobileNo">Mobile: {{ settings.mobileNo }}</div>
 				<div *ngIf="settings?.email">Email: {{ settings.email }}</div>
 			</div>
 		</div>
-
+	
 		<div class="map-container">
 			<div class="map" id="map"></div>
 		</div>
 	</section>
-</main>
-
-<app-footer [academyName]="settings?.academyName || ''"></app-footer>
+</div>

@@ -1,0 +1,22 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	background: rgba(242, 250, 255, 0.5);
+}
+
+.course-card {
+	background-color: #F0F5F8;
+	box-shadow: 0px 0px 16px rgba(95, 95, 95, 0.15);
+	border-radius: 4px;
+	margin-right: 3rem;
+	padding: 1rem 3rem;
+	text-align: center;
+	width: 230px;
+
+	.course-img {
+		width: 50px;
+	}
+}
