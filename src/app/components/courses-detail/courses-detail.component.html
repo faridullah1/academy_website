@@ -24,7 +24,7 @@
 		<div class="section-heading" style="margin-bottom: 5rem;">Short Courses</div>
 
 		<div class="short-courses">
-			<div class="course-card" *ngFor="let course of shortCourses;">
+			<div class="course-card mr-5" *ngFor="let course of shortCourses;">
 				<img [src]="course.image || '/assets/images/course-logo.png'" [alt]="course.name" class="course-img">
 				<div class="name">{{ course.name }}</div>
 			</div>

@@ -4,7 +4,6 @@ import { GenericApiResponse } from 'src/app/models/response';
 import { ApiService } from 'src/app/services/api.service';
 import { ConfigService } from 'src/app/services/config.service';
 
-declare var mapboxgl: any;
 
 @Component({
   selector: 'landing-page',
@@ -33,49 +32,11 @@ export class LandingPageComponent implements OnInit {
 		});
 
 		this.getAllCourses();
-		this.drawMap();
 	}
 
 	getAllCourses(): void {
 		this.apiService.getData('courses').subscribe((resp: GenericApiResponse) => {
 			this.courses = resp.data.courses;
-		});
-	}
-
-	drawMap(): void {
-		const academyMapCoordinates = [70.38910605847849, 32.209581501541294]
-
-		mapboxgl.accessToken = 'pk.eyJ1IjoiZmFyaWR1bGxhaDEyMyIsImEiOiJjbDBuZm0zZDcxYzF0M2Vwd2VzZ2NoOXdmIn0.gh1gSCDUF9e7ybfTAwQ48Q';
-
-		const map = new mapboxgl.Map({
-			container: 'map',
-			style: 'mapbox://styles/faridullah123/cl0ng52ba00a515qg7czopaao',
-		});
-
-		const bounds = new mapboxgl.LngLatBounds();
-
-		// Create Marker
-		const el = document.createElement('div');
-		el.className = 'marker';
-
-		// Add Marker
-		new mapboxgl.Marker({
-			element: el,
-			anchor: 'bottom'
-		}).setLngLat(academyMapCoordinates).addTo(map);
-
-		// Extend map bounds to include current location
-		bounds.extend(academyMapCoordinates, {
-			padding: {
-				top: 200,
-				bottom: 200,
-				left: 100,
-				right: 100
-			}
-		});
-
-		map.fitBounds(bounds, {
-			maxZoom: 14
 		});
 	}
 }

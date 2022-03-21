@@ -1,0 +1,15 @@
+<section class="map-address">
+	<div class="info">
+		<img src="/assets/images/logo.jpg" alt="Logo" class="logo">
+		<div class="academy-name mt-5">{{ settings?.address }}</div>
+
+		<div class="contact-info">
+			<div *ngIf="settings?.mobileNo">Mobile: {{ settings.mobileNo }}</div>
+			<div *ngIf="settings?.email">Email: {{ settings.email }}</div>
+		</div>
+	</div>
+
+	<div class="map-container">
+		<div class="map" id="map"></div>
+	</div>
+</section>
