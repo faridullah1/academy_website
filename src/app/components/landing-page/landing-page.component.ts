@@ -10,6 +10,7 @@ declare var mapboxgl: any;
   selector: 'landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
+  providers: [ConfigService]
 })
 export class LandingPageComponent implements OnInit {
 	settings: SystemSetting;

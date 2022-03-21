@@ -1,6 +1,6 @@
 <div class="container">
 	<app-carousel></app-carousel>
-	
+
 	<section class="overview">
 		<div class="card">
 			<div class="section-heading" style="margin-top: 2.8rem;">Courses Details</div>
@@ -12,11 +12,22 @@
 	</section>
 
 	<section class="certificate">
-		<div class="section-heading" style="margin: 5rem 0;">Certificate Program</div>
+		<div class="section-heading" style="margin-bottom: 5rem;">Certificate Program</div>
 
 		<div class="course-card">
 			<img src="/assets/images/course-logo.png" alt="Course logo" class="course-img">
 			<div class="name">Certification in Information Technology</div>
+		</div>
+	</section>
+
+	<section class="certificate" style="margin-top: 5rem;">
+		<div class="section-heading" style="margin-bottom: 5rem;">Short Courses</div>
+
+		<div class="short-courses">
+			<div class="course-card" *ngFor="let course of shortCourses;">
+				<img [src]="course.image || '/assets/images/course-logo.png'" [alt]="course.name" class="course-img">
+				<div class="name">{{ course.name }}</div>
+			</div>
 		</div>
 	</section>
 </div>
