@@ -1,10 +1,9 @@
 .map-address {
 	display: flex;
-	padding: 0 6rem;
 	margin-top: 6rem;
 	
 	.info {
-		width: 50%;
+		flex: 0 0 50%;
 
 		.logo {
 			width: 7rem;
@@ -20,7 +19,7 @@
 
 	.map-container {
 		height: 380px;
-		width: 100%;
+		flex: 0 0 50%;
 	}
 
 	.map {

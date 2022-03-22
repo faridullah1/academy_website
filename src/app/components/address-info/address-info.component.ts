@@ -10,6 +10,7 @@ declare var mapboxgl: any;
 })
 export class AddressInfoComponent implements OnInit {
 	@Input() settings: SystemSetting;
+	@Input() styles: any;
 
 	constructor() { }
 

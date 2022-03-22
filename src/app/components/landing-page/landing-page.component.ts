@@ -15,6 +15,9 @@ export class LandingPageComponent implements OnInit {
 	settings: SystemSetting;
 	annoucements: Annoucements[];
 	courses: Course[] = [];
+	mapAddressStyles = {
+		'padding': '0 6rem'
+	}
 
 	constructor(private apiService: ApiService, private configService: ConfigService) 
 	{
