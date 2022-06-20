@@ -20,12 +20,15 @@
 		.all-announcements
 		{
 			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
 			margin-bottom: 3rem;
 
 			.announcement {
 				display: flex;
 				flex-direction: column;
-				margin-right: 3rem;
+				margin: 0 3rem 3rem 0;
 				text-align: center;
 			}
 
