@@ -25,4 +25,18 @@
 	.map {
 		height: 100%;
 	}
+
+	@media only screen and (max-width: 850px) {
+		flex-direction: column;
+    	height: 45rem;
+
+		.info {
+			margin-bottom: 3rem;
+			text-align: center;
+		}
+
+		.map-container {
+			border: 1px solid #e3e3e3;
+		}
+	}
 }
