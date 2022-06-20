@@ -29,6 +29,8 @@
 
 	.active {
 		color: var(--color-black);
+		border-bottom: 3px solid var(--color-primary);
+		padding-bottom: 0.4rem;
 	}
 }
 
