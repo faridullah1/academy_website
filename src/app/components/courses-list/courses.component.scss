@@ -6,11 +6,21 @@
 
 	.courses {
 		display: flex;
-	}
+		flex-wrap: wrap;
+		justify-content: center;
 
-	.no-course {
-		font-size: 2rem;
-		font-weight: 700;
-		margin-top: -3rem;
+		@media only screen and (max-width: 600px) {
+			flex-direction: column;
+
+			.course-card {
+				margin: 0 0 3rem;
+			}
+		}
+
+		.no-course {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-top: -3rem;
+		}
 	}
 }
