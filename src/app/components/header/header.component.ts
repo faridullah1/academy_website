@@ -9,6 +9,7 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class HeaderComponent implements OnInit {
 	academyName: string;
+	showMobileMenu: boolean = false;
 
 	constructor(private configService: ConfigService) {}
 
@@ -16,5 +17,9 @@ export class HeaderComponent implements OnInit {
 		this.configService.settings.subscribe(data => {
 			this.academyName = data.academyName;
 		});
+	}
+
+	toggleMenu(): void {
+		this.showMobileMenu = !this.showMobileMenu;
 	}
 }
