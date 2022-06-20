@@ -64,5 +64,27 @@
 				display: block;
 			}
 		}
+
+		@media only screen and (max-width: 850px) {
+			.message-section {
+				padding: 5rem 3rem 6rem !important;
+
+				.message {
+					flex: 0 0 35% !important;
+					margin-right: 2rem;
+				}
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			.message-section {
+				flex-direction: column;
+
+				.message {
+					margin-bottom: 1rem;
+					margin-right: 0;
+				}
+			}
+		}
 	}
 }
