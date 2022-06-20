@@ -5,8 +5,8 @@
 	justify-content: space-between;
 	align-items: center;
 
-	.carousel-img {
-		mix-blend-mode: darken;
+	@media only screen and (max-width: 800px) {
+		flex-direction: column;
 	}
 
 	.welcome-note {
@@ -16,6 +16,52 @@
 		.heading {
 			line-height: 1.3;
 			margin-bottom: 1.6rem;
+		}
+
+		@media only screen and (max-width: 1250px) {
+			width: 30%;
+		}
+
+		@media only screen and (max-width: 950px) {
+			width: 40%;
+			margin-left: 5rem;
+		}
+
+		@media only screen and (max-width: 800px) {
+			width: 100%;
+			margin: 6rem 0 0 2rem;
+			text-align: center;
+		}
+
+		@media only screen and (max-width: 800px) {
+			.btn-primary {
+				margin-right: 3rem;
+			}
+		}
+
+		@media only screen and (max-width: 650px) {
+			.heading-primary {
+				font-size: 3.4rem;
+			}
+
+			.btn-primary {
+				margin-right: 1.8rem;
+			}
+		}
+	}
+
+	.image-section {
+		width: 55%;
+		display: flex;
+		justify-content: flex-end;
+
+		.carousel-img {
+			width: 100%;
+			mix-blend-mode: darken;
+		}
+
+		@media only screen and (max-width: 650px) {
+			width: 65%;
 		}
 	}
 }
