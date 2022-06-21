@@ -29,6 +29,9 @@
 
 	.short-courses {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		
 		margin-bottom: 5rem;
 	}
 }
