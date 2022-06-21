@@ -5,6 +5,14 @@
 	justify-content: space-between;
 	align-items: flex-start;
 
+	@media only screen and (max-width: 600px) {
+		flex-direction: column;
+	}
+
+	@media only screen and (max-width: 500px) {
+		padding: 8rem 2rem 6rem;
+	}
+	
 	.company {
 		display: flex;
 		align-items: center;
@@ -30,6 +38,10 @@
 	.links {
 		text-align: center;
 
+		@media only screen and (max-width: 600px) {
+			margin: 1.5rem 0;
+		}
+
 		.nav-item {
 			text-decoration: none;
 			margin-right: 3.4rem;
@@ -43,11 +55,23 @@
 			.user-nav {
 				display: flex;
 				flex-direction: column;
-			}
 
-			.nav-item {
-				margin-right: 0;
-				margin-bottom: 1rem;
+				.nav-item {
+					margin-right: 0;
+					margin-bottom: 1rem;
+				}
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			.user-nav {
+				flex-direction: row;
+				margin-top: 0;
+
+				.nav-item {
+					margin-right: 1rem;
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -67,6 +91,14 @@
 			.link {
 				margin-bottom: 1rem;
 				margin-right: 0;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			flex-direction: row;
+
+			.link {
+				margin-right: 1rem;
 			}
 		}
 	}

@@ -1,6 +1,10 @@
 .map-address {
 	display: flex;
 	margin-top: 6rem;
+
+	@media only screen and (max-width: 500px) {
+		padding: 0 2rem !important;
+	}
 	
 	.info {
 		flex: 0 0 50%;
