@@ -3,12 +3,20 @@
 	margin: auto;
 	padding: 5rem 0;
 
-	@media only screen and (max-width: 950px) {
+	@media only screen and (max-width: 1100px) {
 		width: 65%;
 	}
 
-	@media only screen and (max-width: 550px) {
-		width: 75%;
+	@media only screen and (max-width: 600px) {
+		width: 80%;
+	}
+
+	@media only screen and (max-width: 500px) {
+		width: 85%;
+	}
+
+	@media only screen and (max-width: 400px) {
+		width: 90%;
 	}
 
 	.title {
