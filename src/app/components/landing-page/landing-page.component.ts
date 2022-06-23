@@ -39,7 +39,7 @@ export class LandingPageComponent implements OnInit {
 	}
 
 	getAllAnnouncements(): void {
-		this.apiService.getData('announcement').subscribe((resp: GenericApiResponse) => {
+		this.apiService.getData('announcements').subscribe((resp: GenericApiResponse) => {
 			const data: Announcement[] = resp.data.announcements;
 			this.announcements = data.filter(el => el.isMain === false);
 			this.mainAnnouncement = data.find(el => el.isMain === true) as Announcement;
