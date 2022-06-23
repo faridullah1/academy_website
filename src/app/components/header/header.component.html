@@ -1,4 +1,4 @@
-<header class="header sticky">
+<header class="header sticky" (click)="toggleMenu($event)">
 	<div class="company" routerLink="/">
 		<img src="/assets/images/logo.jpg" alt="Logo" class="logo">
 		<div class="academy-name">{{ academyName || 'NAC Institute of Engineering and technology' }}</div>
@@ -12,24 +12,24 @@
 		<a class="nav-item" routerLink="/contact-us" routerLinkActive="active">Contact</a>
 	</nav>
 
-	<div class="user-account">
+	<!-- <div class="user-account">
 		<a class="nav-item btn-login">Login</a>
 		<button class="btn-primary">Register</button>
-	</div>
+	</div> -->
 
-	<span class="humburger-menu-icon" (click)="toggleMenu()">
+	<span class="humburger-menu-icon" (click)="toggleMenu($event)">
 		<i class="fas fa-bars"></i>
 	</span>
 
-	<nav class="mobile-menu" *ngIf="showMobileMenu" (click)="toggleMenu()">
+	<nav class="mobile-menu" *ngIf="showMobileMenu" (click)="toggleMenu($event)">
 		<a class="mob-menu-item mt-3" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
 		<a class="mob-menu-item" routerLink="/courses" routerLinkActive="active">Courses</a>
 		<a class="mob-menu-item" routerLink="/contact-us" routerLinkActive="active">Contact</a>
 
-		<div class="user-account-mob">
+		<!-- <div class="user-account-mob">
 			<a class="mob-menu-item btn-login mb-3">Login</a>
 			<button class="btn-primary">Register</button>
-		</div>
+		</div> -->
 	</nav>
 
 </header> 

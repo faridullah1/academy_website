@@ -19,7 +19,9 @@ export class HeaderComponent implements OnInit {
 		});
 	}
 
-	toggleMenu(): void {
+	toggleMenu(ev: MouseEvent): void {
+		ev.stopPropagation();
+		
 		this.showMobileMenu = !this.showMobileMenu;
 	}
 }

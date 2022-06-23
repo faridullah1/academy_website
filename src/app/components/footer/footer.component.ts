@@ -9,8 +9,11 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class FooterComponent {
 	academyName: string;
+	currentDate: number;
 
-	constructor(private configService: ConfigService) {}
+	constructor(private configService: ConfigService) {
+		this.currentDate = Date.now();
+	}
 
 	ngOnInit(): void {
 		this.configService.settings.subscribe(data => {

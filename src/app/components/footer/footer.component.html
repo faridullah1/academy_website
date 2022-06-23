@@ -6,28 +6,28 @@
 		</div>
 	
 		<div class="copyright">
-			<div>Copyright &copy; 2022</div>
+			<div>Copyright &copy; <span>{{ currentDate | date:'YYYY' }}</span></div>
 			<div>All right reserved</div>
 		</div>
 	</div>
 
 	<div class="links">
 		<nav class="user-nav">
-			<a href="/" class="nav-item active">Home</a>
-			<a href="/" class="nav-item">Courses</a>
-			<a href="/" class="nav-item">Fee</a>
-			<a href="/" class="nav-item">Admission</a>
-			<a href="/" class="nav-item">Contact</a>
+			<a routerLink="/" class="nav-item active">Home</a>
+			<a routerLink="/courses" class="nav-item">Courses</a>
+			<!-- <a href="/" class="nav-item">Fee</a>
+			<a href="/" class="nav-item">Admission</a> -->
+			<a routerLink="/contact-us" class="nav-item">Contact</a>
 		</nav>
 
-		<nav class="user-nav mt-5">
+		<!-- <nav class="user-nav mt-5">
 			<a href="/" class="nav-item active">About</a>
 			<a href="/" class="nav-item">Terms</a>
 			<a href="/" class="nav-item">Privacy</a>
-		</nav>
+		</nav> -->
 	</div>
 
-	<div class="social-links">
+	<!-- <div class="social-links">
 		<a href="/">
 			<img src="/assets/images/linkedin.jpg" alt="Linkedin" class="link mr-4">
 		</a>
@@ -35,5 +35,5 @@
 		<a href="/">
 			<img src="/assets/images/youtube.jpg" alt="Youtube"  class="link mr-4">
 		</a>
-	</div>
+	</div> -->
 </footer>
