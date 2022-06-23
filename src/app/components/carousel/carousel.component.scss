@@ -40,6 +40,8 @@
 		}
 
 		@media only screen and (max-width: 650px) {
+			margin: 6rem 0 0 0;
+			
 			.heading-primary {
 				font-size: 3.4rem;
 			}
@@ -62,6 +64,14 @@
 
 		@media only screen and (max-width: 650px) {
 			width: 65%;
+		}
+
+		@media only screen and (max-width: 500px) {
+			margin-top: 2.5rem;
+		}
+
+		@media only screen and (max-width: 400px) {
+			width: 75%;
 		}
 	}
 }

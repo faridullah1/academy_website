@@ -14,6 +14,10 @@
 
 			.course-card {
 				margin: 0 0 3rem;
+
+				&:last-child {
+					margin: 0;
+				}
 			}
 		}
 
