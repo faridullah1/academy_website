@@ -1,7 +1,8 @@
-export interface Annoucements {
+export interface Announcement {
 	image: string;
 	title: string;
 	description: string;
+	isMain: boolean;
 }
 
 export interface Course {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Annoucements, Course, SystemSetting } from 'src/app/models/general';
+import { Announcement, Course, SystemSetting } from 'src/app/models/general';
 import { GenericApiResponse } from 'src/app/models/response';
 import { ApiService } from 'src/app/services/api.service';
 import { ConfigService } from 'src/app/services/config.service';
@@ -13,21 +13,15 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class LandingPageComponent implements OnInit {
 	settings: SystemSetting;
-	annoucements: Annoucements[];
+	announcements: Announcement[] = [];
+	mainAnnouncement: Announcement;
 	courses: Course[] = [];
 	mapAddressStyles = {
 		'padding': '0 6rem'
 	}
 
 	constructor(private apiService: ApiService, private configService: ConfigService) 
-	{
-		this.annoucements = [
-			{ title: 'DIT Result Announced', image: '/assets/images/announcement-1.jpg', description: 'Once again excellent result this time.' },
-			{ title: 'DIT Result Announced', image: '/assets/images/announcement-2.jpg', description: 'Once again excellent result this time.' },
-			{ title: 'DIT Result Announced', image: '/assets/images/announcement-3.jpg', description: 'Once again excellent result this time.' },
-			{ title: 'DIT Result Announced', image: '/assets/images/announcement-4.jpg', description: 'Once again excellent result this time.' },
-		];
-	}
+	{ }
 
 	ngOnInit(): void {
 		this.configService.settings.subscribe(data => {
@@ -35,11 +29,20 @@ export class LandingPageComponent implements OnInit {
 		});
 
 		this.getAllCourses();
+		this.getAllAnnouncements();
 	}
 
 	getAllCourses(): void {
 		this.apiService.getData('courses').subscribe((resp: GenericApiResponse) => {
 			this.courses = resp.data.courses;
+		});
+	}
+
+	getAllAnnouncements(): void {
+		this.apiService.getData('announcement').subscribe((resp: GenericApiResponse) => {
+			const data: Announcement[] = resp.data.announcements;
+			this.announcements = data.filter(el => el.isMain === false);
+			this.mainAnnouncement = data.find(el => el.isMain === true) as Announcement;
 		});
 	}
 }

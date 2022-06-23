@@ -1,13 +1,13 @@
 <div class="landing-page">
 	<app-carousel></app-carousel>
 	
-	<section class="announcements-section">
-		<div class="main-annoucement mb-4">
-			Congratulations on the brilliant result of DIT New syllabus 98% Of NAC Institute of Computer Center. We are going to launch
+	<section class="announcements-section" *ngIf="announcements.length > 0 || mainAnnouncement">
+		<div class="main-annoucement mb-4" *ngIf="mainAnnouncement">
+			{{ this.mainAnnouncement.description }}
 		</div>
 	
 		<div class="all-announcements">
-			<div class="announcement" *ngFor="let annoucement of annoucements">
+			<div class="announcement" *ngFor="let annoucement of announcements">
 				<img [src]="annoucement.image" alt="annoucement">
 				<div class="title">{{ annoucement.title }}</div>
 				<div class="description">{{ annoucement.description }}</div>
