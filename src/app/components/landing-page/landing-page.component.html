@@ -8,7 +8,7 @@
 	
 		<div class="all-announcements">
 			<div class="announcement" *ngFor="let annoucement of announcements">
-				<img [src]="annoucement.image" alt="annoucement" class="image">
+				<img [src]="annoucement.image || '/assets/images/announcement.jpg'" alt="annoucement" class="image">
 				<div class="title">{{ annoucement.title }}</div>
 				<div class="description">{{ annoucement.description }}</div>
 			</div>
