@@ -30,13 +30,16 @@
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 3rem;
-			flex: 1 0 100%;
+			width: 100%;
 
 			.announcement {
 				display: flex;
 				flex-direction: column;
-				margin: 0 3rem 3rem 0;
 				align-items: center;
+				text-align: center;
+
+				margin: 0 3rem 3rem 0;
+				width: 32rem;
 
 				.image {
 					width: 100%;
