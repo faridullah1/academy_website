@@ -17,33 +17,37 @@
 		<button class="btn-primary">More Info</button>
 	</section>
 	
-	<section class="principle-message">
+	<section class="principle-message" *ngIf="settings.principleImage">
 		<div class="card">
 			<div class="section-heading" style="margin-top: 2.8rem;">Principle Message</div>
 	
 			<div class="message-section">
 				<div class="message">
-					{{ settings?.principleMessage }}
+					{{ settings.principleMessage }}
 				</div>
 	
 				<div style="flex: 1;">
-					<img src="/assets/images/principle.jpg" alt="Principle" class="img">
+					<div class="image-container">
+						<img [src]="settings.principleImage" alt="Principle" class="img">
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	
-	<section class="introduction">
+	<section class="introduction" *ngIf="settings.introductionImage">
 		<div class="card">
 			<div class="section-heading" style="margin-top: 2.8rem;">Introduction</div>
 	
 			<div class="message-section">
 				<div class="message">
-					{{ settings?.introduction }}
+					{{ settings.introduction }}
 				</div>
-	
+
 				<div style="flex: 1;">
-					<img src="/assets/images/intro.jpg" alt="Intro" class="img">
+					<div class="image-container">
+						<img [src]="settings.introductionImage" alt="Intro" class="img">
+					</div>
 				</div>
 			</div>
 		</div>
