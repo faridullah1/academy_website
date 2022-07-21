@@ -9,6 +9,7 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class HeaderComponent implements OnInit {
 	academyName: string;
+	logo: string;
 	showMobileMenu: boolean = false;
 
 	constructor(private configService: ConfigService) {}
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
 	ngOnInit(): void {
 		this.configService.settings.subscribe(data => {
 			this.academyName = data.academyName;
+			this.logo = data.logo;
 		});
 	}
 

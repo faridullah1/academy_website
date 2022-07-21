@@ -9,6 +9,7 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class FooterComponent {
 	academyName: string;
+	logo: string;
 	currentDate: number;
 
 	constructor(private configService: ConfigService) {
@@ -18,6 +19,7 @@ export class FooterComponent {
 	ngOnInit(): void {
 		this.configService.settings.subscribe(data => {
 			this.academyName = data.academyName;
+			this.logo = data.logo;
 		});
 	}
 }
