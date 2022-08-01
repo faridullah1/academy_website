@@ -7,22 +7,39 @@
 			<div class="form-group mr-5">
 				<label for="name">Name</label>
 				<input type="text" id="name" placeholder="Name" formControlName="name" required>
+				<div class="error" *ngIf="theForm.get('name')?.touched && theForm.get('name')?.errors">
+					<div *ngIf="theForm.get('name')?.hasError('required')">Name is required</div>
+					<div *ngIf="theForm.get('name')?.hasError('minlength')">Name must be minimum 3 characters</div>
+				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="email">Email</label>
 				<input type="email" id="email" placeholder="Email" formControlName="email" required>
+				<div class="error" *ngIf="theForm.get('email')?.touched && theForm.get('email')?.errors">
+					<div *ngIf="theForm.get('email')?.hasError('required')">Email is required</div>
+					<div *ngIf="theForm.get('email')?.hasError('email')">Please provide a valid email</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="form-group" style="width: 47%;">
-			<label for="phone">Phone</label>
-			<input type="text" id="phone" placeholder="Phone" formControlName="phone" required>
+			<label for="phone">Mobile Number</label>
+			<input type="text" id="phone" placeholder="Mobile Number" 
+				formControlName="phone" required (keydown)="numericOnly($event)">
+			<div class="error" *ngIf="theForm.get('phone')?.touched && theForm.get('phone')?.errors">
+				<div *ngIf="theForm.get('phone')?.hasError('required')">Mobile number is required</div>
+				<div *ngIf="theForm.get('phone')?.hasError('minlength') || theForm.get('phone')?.hasError('maxlength')">Mobile number must be 11 digit.</div>
+			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="comments">Comments</label>
 			<textarea rows="5" type="text" id="comments" formControlName="comments" required></textarea>
+			<div class="error" *ngIf="theForm.get('comments')?.touched && theForm.get('comments')?.errors">
+				<div *ngIf="theForm.get('comments')?.hasError('required')">Comments are required</div>
+				<div *ngIf="theForm.get('comments')?.hasError('minlength')">comments must be minimum of 10 characters.</div>
+			</div>
 		</div>
 
 		<div class="flex justify-end">
@@ -31,5 +48,4 @@
 
 		<address-info [settings]="settings"></address-info>
 	</form>
-
 </section>

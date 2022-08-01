@@ -16,10 +16,10 @@ export class ContactUsComponent implements OnInit {
 
 	constructor(private configService: ConfigService) {
 		this.theForm = new FormGroup({
-			name: new FormControl('', Validators.required),
-			email: new FormControl('', Validators.required),
-			phone: new FormControl('', Validators.required),
-			comments: new FormControl('', Validators.required),
+			name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+			email: new FormControl('', [Validators.required, Validators.email]),
+			phone: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
+			comments: new FormControl('', [Validators.required, Validators.minLength(10)]),
 		});
 	}
 
@@ -28,6 +28,20 @@ export class ContactUsComponent implements OnInit {
 			this.settings = data;
 		});
 	}
+
+	numericOnly(ev: any): boolean
+    {
+		const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Tab'];
+		if (allowedKeys.includes(ev.key)) return true;
+
+        const letters = /^[0-9]+$/;
+        if (ev.key && ev.key.match(letters))
+        {
+            return (ev.key.match(letters).length > 0);
+        }
+
+        return false;
+    }
 
 	onSubmit(): void {
 		console.log(this.theForm.value);
