@@ -1,5 +1,5 @@
 <section class="map-address" [ngStyle]="styles">
-	<div class="info">
+	<div class="info" *ngIf="settings">
 		<img [src]="settings.logo || '/assets/images/logo.jpg'" alt="Logo" class="logo">
 		<div class="academy-name mt-5">{{ settings.address }}</div>
 
