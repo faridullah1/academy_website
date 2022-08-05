@@ -1,3 +1,4 @@
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SystemSetting } from 'src/app/models/general';
@@ -13,13 +14,16 @@ import { ConfigService } from 'src/app/services/config.service';
 export class ContactUsComponent implements OnInit {
 	settings: SystemSetting;
 	theForm: FormGroup;
+	disableBtn = false;
+	isQuerySubmitted = false;
 
-	constructor(private configService: ConfigService) {
+	constructor(private configService: ConfigService, private apiService: ApiService) {
 		this.theForm = new FormGroup({
 			name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-			email: new FormControl('', [Validators.required, Validators.email]),
+			email: new FormControl('', 
+				[Validators.required, Validators.minLength(10), Validators.maxLength(255), Validators.email]),
 			phone: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
-			comments: new FormControl('', [Validators.required, Validators.minLength(10)]),
+			comments: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]),
 		});
 	}
 
@@ -44,6 +48,15 @@ export class ContactUsComponent implements OnInit {
     }
 
 	onSubmit(): void {
-		console.log(this.theForm.value);
+		this.disableBtn = true;
+
+		this.apiService.postData('queries', this.theForm.value).subscribe({
+			complete: () => {
+				this.disableBtn = false;
+				this.isQuerySubmitted = true;
+				this.theForm.reset();
+			},
+			error: () => this.disableBtn = false
+		});
 	}
 }

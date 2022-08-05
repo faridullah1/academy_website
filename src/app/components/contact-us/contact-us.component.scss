@@ -73,3 +73,18 @@
 		border:2px solid#dc3545 !important;
 	}
 }
+
+.query-resp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10rem 0;
+
+	.thangs-msg {
+		font-size: 3rem;
+	}
+
+	.resp-action {
+		font-size: 1.8rem;
+	}
+}

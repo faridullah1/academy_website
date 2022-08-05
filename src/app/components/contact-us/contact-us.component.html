@@ -1,5 +1,5 @@
 <section class="contact-us">
-	<form [formGroup]="theForm" class="form">
+	<form *ngIf="!isQuerySubmitted; else alertMsg;" [formGroup]="theForm" class="form">
 		<div class="title">Contact Us</div>
 		<p class="description">If you need any additional information or have some query, please use the form below and we will get back to you soon</p>
 		
@@ -19,6 +19,8 @@
 				<div class="error" *ngIf="theForm.get('email')?.touched && theForm.get('email')?.errors">
 					<div *ngIf="theForm.get('email')?.hasError('required')">Email is required</div>
 					<div *ngIf="theForm.get('email')?.hasError('email')">Please provide a valid email</div>
+					<div *ngIf="theForm.get('email')?.hasError('minlength')">Email must be minimum 10 characters</div>
+					<div *ngIf="theForm.get('email')?.hasError('maxlength')">Email must be minimum 255 characters</div>
 				</div>
 			</div>
 		</div>
@@ -39,13 +41,23 @@
 			<div class="error" *ngIf="theForm.get('comments')?.touched && theForm.get('comments')?.errors">
 				<div *ngIf="theForm.get('comments')?.hasError('required')">Comments are required</div>
 				<div *ngIf="theForm.get('comments')?.hasError('minlength')">comments must be minimum of 10 characters.</div>
+				<div *ngIf="theForm.get('comments')?.hasError('maxlength')">comments must be minimum of 1000 characters.</div>
 			</div>
 		</div>
 
 		<div class="flex justify-end">
-			<button class="btn-primary" (click)="onSubmit()" [disabled]="theForm.invalid">Send</button>
+			<button class="btn-primary" (click)="onSubmit()" [disabled]="theForm.invalid || disableBtn">Send</button>
 		</div>
 
 		<address-info [settings]="settings"></address-info>
 	</form>
+
+	<ng-template #alertMsg>
+		<div class="query-resp">
+			<p class="thangs-msg">Thanks for submitting your query.</p>
+			<p class="resp-action">Admin will contact you accordingly.</p>
+
+			<button class="mt-3 btn-primary-outline" routerLink="/">Go back</button>
+		</div>
+	</ng-template>
 </section>
