@@ -23,7 +23,10 @@
 	
 			<div class="message-section">
 				<div class="message">
-					{{ settings.principleMessage }}
+					{{ settings.principleMessage | ellipsis:maxPrincipleMsgChar }}
+					<button *ngIf="maxPrincipleMsgChar != settings.principleMessage.length" 
+						role="button" class="see-more-btn" (click)="onSeeMore('principleMsg')">see more
+					</button>
 				</div>
 	
 				<div style="flex: 1;">
@@ -41,7 +44,10 @@
 	
 			<div class="message-section">
 				<div class="message">
-					{{ settings.introduction }}
+					{{ settings.introduction | ellipsis:maxIntroMsgChar }}
+					<button *ngIf="maxIntroMsgChar != settings.introduction.length" 
+						role="button" class="see-more-btn" (click)="onSeeMore('introMsg')">see more
+					</button>
 				</div>
 
 				<div style="flex: 1;">

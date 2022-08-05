@@ -19,8 +19,11 @@ export class LandingPageComponent implements OnInit {
 	mapAddressStyles = {
 		'padding': '0 6rem'
 	}
+	maxPrincipleMsgChar = 400;
+	maxIntroMsgChar = 400;
 
-	constructor(private apiService: ApiService, private configService: ConfigService) 
+	constructor(private apiService: ApiService, 
+				private configService: ConfigService) 
 	{ }
 
 	ngOnInit(): void {
@@ -44,5 +47,14 @@ export class LandingPageComponent implements OnInit {
 			this.announcements = data.filter(el => el.isMain === false);
 			this.mainAnnouncement = data.find(el => el.isMain === true) as Announcement;
 		});
+	}
+
+	onSeeMore(type: 'principleMsg' | 'introMsg'): void {
+		if (type === 'principleMsg') {
+			this.maxPrincipleMsgChar = this.settings.principleMessage.length;
+		}
+		else {
+			this.maxIntroMsgChar = this.settings.introduction.length;
+		}
 	}
 }
