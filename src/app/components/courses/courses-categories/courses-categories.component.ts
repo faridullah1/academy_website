@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/models/general';
 
 @Component({
-  selector: 'app-courses-detail',
-  templateUrl: './courses-detail.component.html',
-  styleUrls: ['./courses-detail.component.scss']
+  selector: 'app-courses-categories',
+  templateUrl: './courses-categories.component.html',
+  styleUrls: ['./courses-categories.component.scss']
 })
-export class CoursesDetailComponent implements OnInit {
+export class CoursesCategoriesComponent implements OnInit {
 	shortCourses: Course[] = [];
 
 	constructor() { }
@@ -18,21 +18,25 @@ export class CoursesDetailComponent implements OnInit {
 	getAllShortCourses(): Course[] {
 		return [
 			{
+				_id: '63036994a2a32e9c3a2c5a12',
 				name: 'Office Automation',
 				teacher: 'Fakhar Zaman',
 				image: '/assets/images/course-logo.png'
 			},
 			{
+				_id: '63036994a2a32e9c3a2c5a32',
 				name: 'Operating System',
 				teacher: 'Fakhar Zaman',
 				image: '/assets/images/course-logo.png'
 			},
 			{
+				_id: '63036994a2a32e9c3a2c5a90',
 				name: 'Auto Cad',
 				teacher: 'Fakhar Zaman',
 				image: '/assets/images/course-logo.png'
 			},
 			{
+				_id: '63036994a2a32e9c3a2c5a23',
 				name: 'Ecommerce',
 				teacher: 'Fakhar Zaman',
 				image: '/assets/images/course-logo.png'

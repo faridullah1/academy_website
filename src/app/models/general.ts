@@ -6,6 +6,7 @@ export interface Announcement {
 }
 
 export interface Course {
+	_id: string;
 	image: string;
 	name: string;
 	teacher: string;

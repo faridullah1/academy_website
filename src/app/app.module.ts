@@ -8,8 +8,11 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CoursesDetailComponent } from './components/courses-detail/courses-detail.component';
-import { CoursesListComponent } from './components/courses-list/courses.component';
+
+import { CoursesCategoriesComponent } from './components/courses/courses-categories/courses-categories.component';
+import { CoursesListComponent } from './components/courses/courses-list/courses.component';
+import { CourseDetailComponent } from './components/courses/course-detail/course-detail.component';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AddressInfoComponent } from './components/address-info/address-info.component';
@@ -23,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 		HeaderComponent,
 		FooterComponent,
 		CoursesListComponent,
-		CoursesDetailComponent,
+		CoursesCategoriesComponent,
+    	CourseDetailComponent,
 		CarouselComponent,
 		ContactUsComponent,
 		AddressInfoComponent,
