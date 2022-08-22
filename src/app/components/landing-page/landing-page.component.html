@@ -17,14 +17,14 @@
 		<button class="btn-primary">More Info</button>
 	</section>
 	
-	<section class="principle-message" *ngIf="settings.principleImage">
+	<section class="principle-message" *ngIf="settings?.principleImage">
 		<div class="card">
 			<div class="section-heading" style="margin-top: 2.8rem;">Principle Message</div>
 	
 			<div class="message-section">
 				<div class="message">
 					{{ settings.principleMessage | ellipsis:maxPrincipleMsgChar }}
-					<button *ngIf="maxPrincipleMsgChar != settings.principleMessage.length" 
+					<button *ngIf="maxPrincipleMsgChar < settings.principleMessage.length" 
 						role="button" class="see-more-btn" (click)="onSeeMore('principleMsg')">see more
 					</button>
 				</div>
@@ -38,14 +38,14 @@
 		</div>
 	</section>
 	
-	<section class="introduction" *ngIf="settings.introductionImage">
+	<section class="introduction" *ngIf="settings?.introductionImage">
 		<div class="card">
 			<div class="section-heading" style="margin-top: 2.8rem;">Introduction</div>
 	
 			<div class="message-section">
 				<div class="message">
 					{{ settings.introduction | ellipsis:maxIntroMsgChar }}
-					<button *ngIf="maxIntroMsgChar != settings.introduction.length" 
+					<button *ngIf="maxIntroMsgChar < settings.introduction.length" 
 						role="button" class="see-more-btn" (click)="onSeeMore('introMsg')">see more
 					</button>
 				</div>
