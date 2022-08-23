@@ -1,1 +1,36 @@
-<p>course-detail works!</p>
+<div class="container" *ngIf="course">
+	<div class="course-name-container">
+		<div>
+			<div class="course-name">{{ course.name }}</div>
+			<div class="price"><span style="font-weight: 700; padding-left: .5rem;">price:</span> {{ course.price }}</div>
+		</div>
+	</div>
+
+	<div class="detail-card text-center">
+		<p class="heading-secondary">It is time to learn {{ course.name }}</p>
+		<div>{{ course.description }}</div>
+	</div>
+
+	<div class="detail-card course-teacher-container">
+		<img class="teacher-image mr-3" [src]="course.teacher.photo" alt="Teacher">
+
+		<div class="teacher">
+			<div class="heading-secondary">Meet {{ course.teacher.fullName }}</div>
+			<div> {{ course.teacher.profileSummary }} </div>
+		</div>
+	</div>
+
+	<div class="detail-card">
+		<div class="heading-secondary">What will I learn</div>
+		<ul class="course-outline">
+			<li *ngFor="let item of course.outline">
+				{{ item }}
+			</li>
+		</ul>
+	</div>
+
+	<div class="detail-card">
+		<div class="heading-secondary">Who is this for</div>
+		<div> {{ course.audience }} </div>
+	</div>
+</div>

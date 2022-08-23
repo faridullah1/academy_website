@@ -20,26 +20,16 @@ export class CoursesCategoriesComponent implements OnInit {
 			{
 				_id: '63036994a2a32e9c3a2c5a12',
 				name: 'Office Automation',
-				teacher: 'Fakhar Zaman',
-				image: '/assets/images/course-logo.png'
-			},
-			{
-				_id: '63036994a2a32e9c3a2c5a32',
-				name: 'Operating System',
-				teacher: 'Fakhar Zaman',
-				image: '/assets/images/course-logo.png'
-			},
-			{
-				_id: '63036994a2a32e9c3a2c5a90',
-				name: 'Auto Cad',
-				teacher: 'Fakhar Zaman',
-				image: '/assets/images/course-logo.png'
-			},
-			{
-				_id: '63036994a2a32e9c3a2c5a23',
-				name: 'Ecommerce',
-				teacher: 'Fakhar Zaman',
-				image: '/assets/images/course-logo.png'
+				teacher: {
+					fullName: 'Fakhar Zaman',
+					photo: '/assets/images/course-logo.png',
+					profileSummary: 'I am full stack developer and Instructor. My main expertise are in HTML, CSS and Javascript.'
+				},
+				image: '/assets/images/course-logo.png',
+				audience: 'This is a beginner-friendly course for office automation.',
+				outline: [],
+				description: 'This is one of the best courses for Office automation.',
+				price: 5000
 			}
 		]
 	}

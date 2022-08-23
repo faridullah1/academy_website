@@ -7,11 +7,21 @@ export interface Announcement {
 
 export interface Course {
 	_id: string;
-	image: string;
 	name: string;
-	teacher: string;
+	image: string;
+	price: number;
+
+	description: string;
+	teacher: CourseTeacher;
+	outline: string[];
+	audience: string;
 }
 
+export interface CourseTeacher {
+	fullName: string;
+	photo: string;
+	profileSummary: string;
+}
 export interface SystemSetting {
 	_id: string;
 	academyName: string;
