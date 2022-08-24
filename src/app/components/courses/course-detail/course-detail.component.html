@@ -1,27 +1,35 @@
 <div class="container" *ngIf="course">
 	<div class="course-name-container">
-		<div>
+		<div class="text-center">
+			<img [src]="'/assets/images/course-logo.png'" alt="Course" class="course-detail-image">
 			<div class="course-name">{{ course.name }}</div>
-			<div class="price"><span style="font-weight: 700; padding-left: .5rem;">price:</span> {{ course.price }}</div>
-		</div>
-	</div>
-
-	<div class="detail-card text-center">
-		<p class="heading-secondary">It is time to learn {{ course.name }}</p>
-		<div>{{ course.description }}</div>
-	</div>
-
-	<div class="detail-card course-teacher-container">
-		<img class="teacher-image mr-3" [src]="course.teacher.photo" alt="Teacher">
-
-		<div class="teacher">
-			<div class="heading-secondary">Meet {{ course.teacher.fullName }}</div>
-			<div> {{ course.teacher.profileSummary }} </div>
+			<div class="text-center">
+				<span style="font-weight: 700; padding-left: .5rem;">price:</span>
+				{{ course.price }}
+			</div>
 		</div>
 	</div>
 
 	<div class="detail-card">
-		<div class="heading-secondary">What will I learn</div>
+		<div class="inner-card text-center flex-column">
+			<p class="heading-secondary">It is time to learn {{ course.name }}</p>
+			<div>{{ course.description }}</div>
+		</div>
+	</div>
+
+	<div class="detail-card course-teacher-container">
+		<div class="inner-card">
+			<img class="teacher-image mr-5" [src]="course.teacher.photo" alt="Teacher">
+
+			<div class="teacher">
+				<div class="heading-secondary">Meet {{ course.teacher.fullName }}</div>
+				<div> {{ course.teacher.profileSummary }} </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="detail-card flex-column">
+		<div class="heading-secondary">What will I learn?</div>
 		<ul class="course-outline">
 			<li *ngFor="let item of course.outline">
 				{{ item }}
@@ -29,7 +37,7 @@
 		</ul>
 	</div>
 
-	<div class="detail-card">
+	<div class="detail-card flex-column">
 		<div class="heading-secondary">Who is this for</div>
 		<div> {{ course.audience }} </div>
 	</div>

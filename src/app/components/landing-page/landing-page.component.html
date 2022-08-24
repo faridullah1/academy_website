@@ -2,7 +2,7 @@
 	<app-carousel></app-carousel>
 	
 	<section class="announcements-section" *ngIf="announcements.length > 0 || mainAnnouncement">
-		<div class="main-annoucement mb-4" *ngIf="mainAnnouncement">
+		<div class="main-annoucement" [class.mb-6]="announcements.length > 0" *ngIf="mainAnnouncement">
 			{{ this.mainAnnouncement.description }}
 		</div>
 	
@@ -13,8 +13,6 @@
 				<div class="description">{{ annoucement.description }}</div>
 			</div>
 		</div>
-	
-		<button class="btn-primary">More Info</button>
 	</section>
 	
 	<section class="principle-message" *ngIf="settings?.principleImage">
