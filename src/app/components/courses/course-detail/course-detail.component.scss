@@ -79,15 +79,16 @@
 			
 			.teacher {
 				align-items: center;
-	
-				.teacher-profile {
-					margin-top: 1.2rem;
-				}
 			}
 		}
 	}
 
 	@media only screen and (max-width: 650px) {
+		.heading-secondary {
+			margin-bottom: 1.2rem;
+			line-height: 1.3;
+		}
+
 		.detail-card {
 			margin: 2rem;
 			padding: 5rem 0;
