@@ -56,11 +56,67 @@
 		}
 	}
 
-	.course-outline {
-		padding-left: 2rem;
+	.course-outline-container {
+		flex-direction: column;
 
-		li {
-			line-height: 2.2;
+		.course-outline {
+			padding-left: 2rem;
+	
+			li {
+				line-height: 2.2;
+			}
+		}
+	}
+
+	.audience {
+		flex-direction: column;
+	}
+
+	@media only screen and (max-width: 750px) {
+		.teacher-inner-container {
+			flex-direction: column;
+			align-items: center;
+			
+			.teacher {
+				align-items: center;
+	
+				.teacher-profile {
+					margin-top: 1.2rem;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 650px) {
+		.detail-card {
+			margin: 2rem;
+			padding: 5rem 0;
+
+			.inner-card {
+				width: 80% !important;
+			}
+		}
+
+		.course-outline-container {
+			align-items: center;
+
+			.course-outline {
+				padding-left: 8rem;
+			}
+		}
+
+		.audience {
+			align-items: center;
+		}
+	}
+
+	@media only screen and (max-width: 400px) {
+		.course-outline {
+			padding-left: 5rem !important;
+		}
+
+		.audience {
+			padding: 5rem 2rem;
 		}
 	}
 }

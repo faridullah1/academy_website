@@ -18,17 +18,19 @@
 	</div>
 
 	<div class="detail-card course-teacher-container">
-		<div class="inner-card">
-			<img class="teacher-image mr-5" [src]="course.teacher.photo" alt="Teacher">
+		<div class="inner-card teacher-inner-container">
+			<div>
+				<img class="teacher-image mr-5" [src]="course.teacher.photo" alt="Teacher">
+			</div>
 
 			<div class="teacher">
 				<div class="heading-secondary">Meet {{ course.teacher.fullName }}</div>
-				<div> {{ course.teacher.profileSummary }} </div>
+				<div class="teacher-profile"> {{ course.teacher.profileSummary }} </div>
 			</div>
 		</div>
 	</div>
 
-	<div class="detail-card flex-column">
+	<div class="detail-card course-outline-container">
 		<div class="heading-secondary">What will I learn?</div>
 		<ul class="course-outline">
 			<li *ngFor="let item of course.outline">
@@ -37,8 +39,8 @@
 		</ul>
 	</div>
 
-	<div class="detail-card flex-column">
-		<div class="heading-secondary">Who is this for</div>
+	<div class="detail-card audience">
+		<div class="heading-secondary">Who is this for?</div>
 		<div> {{ course.audience }} </div>
 	</div>
 </div>
